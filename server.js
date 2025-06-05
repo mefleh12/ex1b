@@ -1,3 +1,12 @@
+/**
+ * כותב: מופלח שיבלי
+ * ת"ז: 214310633
+ * תאריך כתיבה: יוני 5 2025
+ * תיאור: קובץ זה מפעיל את שרת ה-Node.js של אתר פרופיל אישי,
+ * כולל ניהול מסדי נתונים, הרשמה, התחברות, הצפנת סיסמאות,
+ * ניהול session, והצגת פרטי משתמש בדף הבית.
+ */
+
 const express = require('express');
 const session = require('express-session');
 const fileUpload = require('express-fileupload');
