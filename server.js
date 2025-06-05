@@ -81,7 +81,15 @@ app.post('/login', (req, res) => {
       return res.send('Invalid password.');
     }
 
-    req.session.user = user;
+    req.session.user = {
+  id: user.id,
+  username: user.username,
+  firstName: user.firstName,
+  lastName: user.lastName,
+  email: user.email,
+  birthDate: user.birthDate,
+  image: user.image
+};
     res.redirect('/home');
   });
 

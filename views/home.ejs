@@ -3,13 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <title>Home</title>
+  <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-  <h1>Welcome, <%= user.firstName %> <%= user.lastName %>!</h1>
-  <p><strong>Username:</strong> <%= user.username %></p>
-  <p><strong>Email:</strong> <%= user.email %></p>
-  <p><strong>Birth Date:</strong> <%= user.birthDate %></p>
-  <p><img src="/uploads/<%= user.image %>" alt="Profile Image" width="200"></p>
-  <a href="/logout">Logout</a>
+  <div class="container">
+    <h1>Welcome, <%= user.firstName %> <%= user.lastName %>!</h1>
+    <p><strong>Username:</strong> <%= user.username %></p>
+    <p><strong>Email:</strong> <%= user.email %></p>
+    <p><strong>Birth Date:</strong> <%= user.birthDate %></p>
+    <p><img src="/uploads/<%= user.image %>" alt="Profile Image" width="200"></p>
+    <a href="/logout">Logout</a>
+  </div>
+
+  <script>
+    const starsContainer = document.createElement('div');
+    starsContainer.className = 'stars';
+    document.body.appendChild(starsContainer);
+    for (let i = 0; i < 120; i++) {
+      const star = document.createElement('div');
+      star.className = 'star';
+      star.style.top = Math.random() * 100 + 'vh';
+      star.style.left = Math.random() * 100 + 'vw';
+      star.style.animationDuration = (Math.random() * 3 + 2) + 's';
+      starsContainer.appendChild(star);
+    }
+  </script>
 </body>
 </html>
